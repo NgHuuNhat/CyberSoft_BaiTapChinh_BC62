@@ -1,0 +1,386 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Arial", "Helvetica", sans-serif;
+}
+
+/* Đảm bảo phần tử cuối cùng không bị trôi ra khỏi container */
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* HEADER */
+.header {
+    padding: 15px 0;
+}
+
+.header a {
+    text-decoration: none;
+    color: rgb(27 29 45);
+    text-align: center;
+}
+
+/* CONTAINER */
+.container {
+    margin: auto;
+    width: 75%;
+}
+
+/* MENU */
+.menu {
+    margin: 30px 0 0;
+}
+
+.menu li {
+    list-style: none;
+    display: inline;
+}
+
+.menu a {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-family: sans-serif;
+}
+
+.menu a:hover {
+    background-color: #add8e62b;
+}
+
+/* LOGO */
+.logo i {
+    width: 36px;
+    height: 36px;
+    line-height: 36px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.7);
+    vertical-align: bottom;
+    color: rgb(255, 200, 0);
+    display: inline-block;
+}
+
+.logo span {
+    font-size: 35px;
+    font-weight: 700;
+    font-family: sans-serif;
+    margin-left: 5px;
+    letter-spacing: 1px;
+}
+
+/* CAROUSEL */
+.carousel {
+    background-image: url(../images/2.jpg);
+    background-size: cover;
+    background-position: top;
+    height: 562px;
+}
+
+/* ACTIVIES */
+.activies .container {
+    padding: 80px 0;
+}
+
+.activies__title {
+    float: left;
+    width: 50%;
+    line-height: 1.5;
+    padding-right: 50px;
+    color: rgb(27 29 45);
+}
+
+.activies__title h1 {
+    margin-bottom: 20px;
+}
+
+.activies__title p {
+    margin-bottom: 20px;
+    color: rgb(149 149 149);
+}
+
+.activies__title button {
+    background-color: rgb(253 200 0);
+    border: none;
+    font-size: 16px;
+    padding: 12px 30px;
+    border-radius: 5px;
+    color: black;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.activies__content {
+    float: right;
+    width: 50%;
+}
+
+.activies__content img {
+    width: 100%;
+    height: 100%;
+    border-radius: 0 5px 5px 0;
+    object-fit: cover; /* Để giữ tỷ lệ khung hình khi thay đổi kích thước */
+}
+
+/* .CONTACT */
+.contact {
+    background-color: #d3d3d37a;
+    padding: 50px 0;
+}
+
+.contact .item {
+    float: left;
+    width: 25%;
+    padding-right: 30px;
+    color: rgb(33 37 41);
+}
+
+.contact .item__title {
+    float: left;
+    width: 30%;
+    font-size: 28px;
+}
+
+.contact .item__content {
+    float: left;
+    width: 70%;
+    font-size: 13px;
+    padding-top: 15px;
+    padding-left: 5px;
+}
+
+.contact .item__content h3 {
+    display: block;
+}
+
+/* .CONTACT2 */
+.contact2 {
+    padding: 80px 0;
+}
+
+.contact2 .container {
+    width: 78%;
+}
+
+.contact2 .item {
+    float: left;
+    width: 25%;
+    padding: 20px;
+}
+
+.contact2 .item div {
+    background-color: rgb(0 33 70);
+    text-align: center;
+    border-radius: 3px;
+    padding: 30px;
+    color: white;
+}
+
+.contact2 i {
+    margin-bottom: 20px;
+    font-size: 40px;
+    color: rgb(255 255 255);
+}
+
+/* .CONTACT3 */
+.contact3 {
+    background-color: rgb(246 246 246);
+    padding: 100px 0;
+}
+
+.contact3 .container {
+    width: 78%;
+}
+
+.contact3 h1 {
+    margin-bottom: 50px;
+    /* background-color: lightcoral; */
+    color: rgb(27 29 45);
+}
+
+.contact3 .item {
+    float: left;
+    width: 50%;
+    /* background-color: lightblue; */
+    padding: 0 20px;
+}
+
+.contact3 .content {
+    background-color: lightsalmon;
+    background-color: rgb(255 255 255);
+    padding: 20px;
+    position: relative;
+}
+
+.contact3 .line::after {
+    content: "";
+    position: absolute;
+    bottom: 0; /* Điều chỉnh vị trí đường gạch so với bottom của div cha */
+    width: 91%; /* Độ dài của đường gạch bằng với chiều rộng của div cha */
+    border-bottom: 2px solid rgb(248 248 248); /* Độ dày và màu của đường gạch */
+}
+
+.contact3 .title h4 {
+    margin-bottom: 5px;
+    color: rgb(27 29 45);
+}
+
+.contact3 .title p {
+    margin-bottom: 15px;
+    font-size: 15px;
+    line-height: 1.4;
+}
+
+.contact3 .title__time {
+    color: rgb(148 148 148);
+}
+
+.contact3 .images {
+    float: left;
+    width: 35%;
+}
+
+.contact3 .title {
+    float: right;
+    width: 65%;
+    padding-left: 20px;
+}
+
+
+.contact3 img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.contact3 .button {
+    text-align: right;
+    /* background-color: yellow; */
+}
+.contact3 button {
+    background-color: rgb(253 200 0);
+    border: none;
+    font-size: 16px;
+    padding: 12px 30px;
+    border-radius: 5px;
+    color: rgb(0 33 70);
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.card {
+    text-align: center;
+}
+.card__top {
+    background-color: rgb(253 200 0);
+    padding: 20px;
+    border-radius: 5px 5px 0 0;
+    color: rgb(0 33 70);
+}
+.card__bottom {
+    background-color: rgb(0 33 70);
+    padding: 10px 20px;
+    border-radius: 0 0 5px 5px;
+    color: white;
+}
+
+.content__2 .images {
+    width: 25%;
+}
+
+.content__2 .title {
+    width: 75%;
+}
+
+.content__2 h4 {
+    margin-bottom: 20px !important;
+}
+
+.card__top h4 {
+    margin-bottom: 5px;
+}
+
+.card__top h2 {
+    font-size: xx-large;
+}
+
+.time p {
+    float: left;
+    position: relative;
+    padding-right: 20px;
+    color: rgb(7 39 75);
+    font-weight: 600;
+}
+
+.time__p {
+    padding-left: 20px;
+}
+
+.time .time__p::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 2px; /* Độ dày của đường kẻ dọc */
+    background-color: rgb(158 158 158); /* Màu sắc của đường kẻ */
+}
+
+/* FOOTER */
+footer {
+    background-color: rgb(0 33 70);
+    padding: 80px 0;
+    color: rgb(253 253 253);
+    /* border: 1px solid red; */
+}
+
+.container__footer {
+    /* background-color: green;
+    border: 1px solid red; */
+    padding: 10px;
+    position: relative;
+}
+
+.container__footer .copyright {
+    font-size: 14px;
+    margin-top: 30px;
+}
+
+.container__footer .item {
+    float: left;
+    width: calc(100%/3);
+    padding-right: 50px;
+    /* background-color: yellow;
+    border: 1px solid red; */
+}
+
+.container__footer .item h4 {
+    margin-bottom: 30px;
+    font-size: 20px;
+}
+
+.container__footer .item a {
+    display: block;
+    margin-bottom: 15px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: rgb(253 253 253);
+    text-decoration: none;
+}
+
+.container__footer .item a:hover {
+    color: red;
+}
+
+.container__footer i {
+    margin-right: 5px;
+}
+
+footer .line::after {
+    content: "";
+    position: absolute;
+    bottom: 0; /* Điều chỉnh vị trí đường gạch so với bottom của div cha */
+    width: 98%; /* Độ dài của đường gạch bằng với chiều rộng của div cha */
+    border-bottom: 1px solid rgb(248 248 248); /* Độ dày và màu của đường gạch */
+}
