@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- CSS  -->
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    
+    <!-- SCRIPT  -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+    <!-- Bài 1: Tính tiền lương nhân viên -->
+    <div class="container">
+        <h2>Bài 1: Tính tiền lương nhân viên</h2>
+        <form>
+            <div class="form-group">
+              <label for="luongMotNgay">Lương 1 ngày</label>
+              <input class="form-control" id="luongMotNgay" value="100000">
+            </div>
+            <div class="form-group">
+              <label for="soNgayLam">Nhập số ngày làm</label>
+              <input class="form-control" id="soNgayLam">
+            </div>
+
+            <div class="button">
+                <button type="button" class="btn btn-primary tinhLuong" id="tinhLuong">Tính Lương</button>
+                <div class="hienThi" id="hienThiLuong"></div>
+            </div>
+        </form>
+
+    </div>
+
+    <!-- Bài 2: Tính giá trị trung bình -->
+    <div class="container">
+        <h2>Bài 2: Tính giá trị trung bình</h2>
+        <form>
+            <div class="nhapSo">
+                <div class="form-group">
+                    <label for="soThu1">Nhập số thứ 1</label>
+                    <input class="form-control" id="soThu1">
+                </div>
+                <div class="form-group">
+                    <label for="soThu2">Nhập số thứ 2</label>
+                    <input class="form-control" id="soThu2">
+                </div>
+                <div class="form-group">
+                      <label for="soThu3">Nhập số thứ 3</label>
+                      <input class="form-control" id="soThu3">
+                </div>
+                <div class="form-group">
+                      <label for="soThu4">Nhập số thứ 4</label>
+                      <input class="form-control" id="soThu4">
+                </div>
+                <div class="form-group">
+                      <label for="soThu5">Nhập số thứ 5</label>
+                      <input class="form-control" id="soThu5">
+                </div>
+            </div>
+
+            <div class="button">
+                <button type="button" class="btn btn-primary tinhTrungBinh" id="tinhTrungBinh">Tính Trung Bình</button>
+                <div class="hienThi" id="hienThiTrungBinh"></div>
+            </div>
+        </form>
+
+    </div>
+
+     <!-- Bài 3: Quy đổi tiền -->
+     <div class="container">
+        <h2>Bài 3: Quy đổi tiền</h2>
+        <form>
+            <div class="form-group">
+              <label for="giaTienUSD">1 USD</label>
+              <input class="form-control" id="giaTienUSD" value="23500">
+            </div>
+            <div class="form-group">
+              <label for="soTienUSD">Nhập USD</label>
+              <input class="form-control" id="soTienUSD">
+            </div>
+
+            <div class="button">
+                <button type="button" class="btn btn-primary quyDoiTien" id="quyDoiTien">Quy đổi tiền</button>
+                <div class="hienThi" id="hienThiQuyDoi"></div>
+            </div>
+        </form>
+        
+    </div>
+
+    <!-- Bài 4: Tính diện tích, chu vi hình chữ nhật -->
+    <div class="container">
+        <h2>Bài 4: Tính diện tích, chu vi hình chữ nhật</h2>
+        <form>
+            <div class="form-group">
+              <label for="chieuDai">Nhập chiều dài</label>
+              <input class="form-control" id="chieuDai">
+            </div>
+            <div class="form-group">
+              <label for="chieuRong">Nhập chiều rộng</label>
+              <input class="form-control" id="chieuRong">
+            </div>
+
+            <div class="button">
+                <button type="button" class="btn btn-primary tinh" id="tinh">Tính diện tích, chu vi</button>
+                <div class="hienThi" id="hienThiTinh"></div>
+            </div>
+        </form>
+
+    </div>
+
+    <!-- Bài 5: Tính tổng 2 ký số -->
+    <div class="container">
+        <h2>Bài 5: Tính tổng 2 ký số</h2>
+        <form>
+            <div class="form-group">
+              <label for="soHaiChuSo">Nhập số có 2 chữ số</label>
+              <input class="form-control" id="soHaiChuSo">
+            </div>
+
+            <div class="button">
+                <button type="button" class="btn btn-primary tinhTongHaiKySo" id="tinhTongHaiKySo">Tính tổng 2 ký số</button>
+                <div class="hienThi" id="hienThiTongHaiKySo"></div>
+            </div>
+        </form>
+
+    </div>
+
+    
+
+
+    
+
+
+    <!-- SCRIPT -->
+    <script src="./js/main.js"></script>
+</body>
+</html>
