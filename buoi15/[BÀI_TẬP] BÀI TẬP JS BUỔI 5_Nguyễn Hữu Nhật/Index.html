@@ -112,17 +112,17 @@
     </div>
 
     <!-- Bài 3: TÍNH THUẾ THU NHẬP CÁ NHÂN -->
-    <div class="container" id="bai2Content">
+    <div class="container" id="bai3Content">
         <h4>Bài 3: TÍNH THUẾ THU NHẬP CÁ NHÂN</h4>
         <form>
             <div class="thongTinBai2">
                 <div class="form-group">
-                    <label for="hoTen">Nhập Họ Tên</label>
-                    <input class="form-control" id="hoTen">
+                    <label for="hoTen3">Nhập Họ Tên</label>
+                    <input class="form-control" id="hoTen3">
                 </div>
                 <div class="form-group">
                     <label for="tongThuNhapNam">Nhập tổng thu nhập năm</label>
-                    <input class="form-control" id="tongThuNhapNam">
+                    <input type="number" class="form-control" id="tongThuNhapNam">
                 </div>
                 <div class="form-group">
                     <label for="soNguoiPhuThuoc">Nhập số người phụ thuộc</label>
@@ -132,8 +132,43 @@
             </div>
 
             <div class="button">
-                <button type="button" class="btn btn-primary ketQua" id="tinhTienDien">Tính tiền điện</button>
-                <div class="hienThi" id="hienThiTienDien"></div>
+                <button type="button" class="btn btn-primary ketQua" id="tinhTienThue">Tính tiền thuê</button>
+                <div class="hienThi" id="hienThiTienThue"></div>
+            </div>
+        </form>
+
+    </div>
+
+    <!-- Bài 4: TÍNH TIỀN CÁP -->
+    <div class="container" id="bai4Content">
+        <h4>Bài 4: TÍNH TIỀN CÁP</h4>
+        <form>
+            <div class="thongTinBai2">
+                <div class="form-group">
+                    <label for="loaiKH">Chọn loại khách hàng</label>
+                    <select class="form-control" id="loaiKH" onchange="hienAnSoKetNoi()">
+                      <option value="nhaDan">Nhà dân</option>
+                      <option value="doanhNghiep">Doanh nghiệp</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="maKH">Nhập mã khách hàng</label>
+                    <input class="form-control" id="maKH">
+                </div>
+                <div class="form-group">
+                    <label for="soKenhCaoCap">Số kênh cao cấp</label>
+                    <input class="form-control" id="soKenhCaoCap">
+                </div>
+                <div class="form-group" id="soKetNoiInput" style="display: none;">
+                    <label for="soKetNoi">Số kết nối</label>
+                    <input class="form-control" id="soKetNoi">
+                </div>
+                
+            </div>
+
+            <div class="button">
+                <button type="button" class="btn btn-primary ketQua" id="tinhTienCap">Tính tiền cáp</button>
+                <div class="hienThi" id="hienThiTienCap"></div>
             </div>
         </form>
 

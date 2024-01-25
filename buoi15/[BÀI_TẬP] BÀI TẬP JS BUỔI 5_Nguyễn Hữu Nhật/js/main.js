@@ -17,7 +17,7 @@ $(".container").hide();
 $("#bai1Content").show();
 
 // Số lượng bài
-var soLuongBai = 5;
+var soLuongBai = 4;
 
 // Tạo menu items và sự kiện click tương ứng
 for (var i = 1; i <= soLuongBai; i++) {
@@ -119,3 +119,99 @@ function tinhTienDien() {
 
 }
 document.getElementById("tinhTienDien").onclick = tinhTienDien;
+
+// Bài 3: TÍNH THUẾ THU NHẬP CÁ NHÂN
+function tinhTienThue(){
+
+    let hoTen3 = document.getElementById("hoTen3").value;
+    let tongThuNhapNam = parseFloat(document.getElementById("tongThuNhapNam").value);
+    let soNguoiPhuThuoc = parseInt(document.getElementById("soNguoiPhuThuoc").value);
+
+    let thuNhapChiuThue = tongThuNhapNam - 4000000 - soNguoiPhuThuoc*1600000;
+    let tienThueThuNhapCaNhan = 0;
+
+    if(thuNhapChiuThue < 60000000){
+        tienThueThuNhapCaNhan = thuNhapChiuThue * 0.05;
+
+    } else if(60000000 < thuNhapChiuThue < 120000000){
+        tienThueThuNhapCaNhan = thuNhapChiuThue * 0.1;
+
+    } else if(120000000 < thuNhapChiuThue < 210000000){
+        tienThueThuNhapCaNhan = thuNhapChiuThue * 0.15;
+
+    } else if(210000000 < thuNhapChiuThue < 384000000){
+        tienThueThuNhapCaNhan = thuNhapChiuThue * 0.2;
+
+    } else if(384000000 < thuNhapChiuThue < 624000000){
+        tienThueThuNhapCaNhan = thuNhapChiuThue * 0.25;
+        
+    } else if(624000000 < thuNhapChiuThue < 960000000){
+        tienThueThuNhapCaNhan = thuNhapChiuThue * 0.3;
+        
+    } else if(960000000 < thuNhapChiuThue){
+        tienThueThuNhapCaNhan = thuNhapChiuThue * 0.35;
+        
+    }
+
+    // Định dạng số tiền VND với 3 số 0 phân tách
+    var formatter = new Intl.NumberFormat('vi-VN', {
+        style: 'currency',
+        currency: 'VND',
+        minimumFractionDigits: 0,
+    });
+    tienThueThuNhapCaNhan = formatter.format(tienThueThuNhapCaNhan);
+    document.getElementById("hienThiTienThue").innerHTML = "Họ tên: " + hoTen3 + "<br>" + "Tiền thuế thu nhập cá nhân: " + tienThueThuNhapCaNhan;
+
+}
+document.getElementById("tinhTienThue").onclick = tinhTienThue;
+
+// Bài 4: TÍNH TIỀN CÁP
+function hienAnSoKetNoi(){
+
+    let loaiKH = document.getElementById("loaiKH");
+    let soKetNoiInput = document.getElementById("soKetNoiInput");
+
+    if(loaiKH.value === "doanhNghiep"){
+        soKetNoiInput.style.display = "block";
+    } else {
+        soKetNoiInput.style.display = "none";
+    }
+
+}
+
+function tinhTienCap(){
+
+    let loaiKH = document.getElementById("loaiKH").value;
+    let maKH = document.getElementById("maKH").value;
+    let soKenhCaoCap = parseInt(document.getElementById("soKenhCaoCap").value);
+    let soKetNoi = parseInt(document.getElementById("soKetNoi").value);
+
+    let phiXuLiHoaDon = 0.0;
+    let phiDichVuCoBan = 0.0;
+    let thueKenhCaoCap = 0.0;
+
+    if(loaiKH === "nhaDan"){
+        phiXuLiHoaDon = 4.5;
+        phiDichVuCoBan = 20.5;
+        thueKenhCaoCap = 7.5;
+
+    } else if(loaiKH === "doanhNghiep"){
+        phiXuLiHoaDon = 15;
+        thueKenhCaoCap = 50;
+        if(1 <= soKetNoi <= 10){
+            phiDichVuCoBan = 75;
+
+        } else if(10 < soKetNoi){
+            phiDichVuCoBan = 75 + 5*(soKetNoi-10);
+        }
+    }
+
+    let tienCap = phiXuLiHoaDon + phiDichVuCoBan + thueKenhCaoCap;
+
+    document.getElementById("hienThiTienCap").innerHTML = "Mã khách hàng: " + maKH + "<br>" + "Tiền cáp: $" + tienCap;
+
+}
+document.getElementById("tinhTienCap").onclick = tinhTienCap;
+
+
+
