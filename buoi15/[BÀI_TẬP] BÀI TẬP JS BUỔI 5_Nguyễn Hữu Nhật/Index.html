@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+     <!-- CSS  -->
+     <link rel="stylesheet" href="./css/style.css">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+     
+     <!-- SCRIPT  -->
+     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav" id="menuItems">
+            <!-- <li class="nav-item" id="bai1">
+                <a class="nav-link" href="#">Bài 1</a>
+            </li>
+            <li class="nav-item" id="bai2">
+                <a class="nav-link" href="#">Bài 2</a>
+            </li>
+            <li class="nav-item" id="bai3">
+                <a class="nav-link" href="#">Bài 3</a>
+            </li>
+            <li class="nav-item" id="bai4">
+                <a class="nav-link" href="#">Bài 4</a>
+            </li>
+            <li class="nav-item" id="bai5">
+                <a class="nav-link" href="#">Bài 5</a>
+            </li> -->
+          </ul>
+        </div>
+    </nav>
+    
+    <!-- Bài 1: QUẢN LÝ TUYỂN SINH -->
+    <div class="container" id="bai1Content">
+        <h4>Bài 1: QUẢN LÝ TUYỂN SINH</h4>
+        <form>
+            <div class="thongTinBai1">
+                <div class="form-group">
+                    <label for="diemChuan">Nhập điểm chuẩn</label>
+                    <input class="form-control" id="diemChuan">
+                </div>
+                <div class="form-group">
+                      <label for="khuVuc">Chọn khu vực</label>
+                      <select class="form-control" id="khuVuc">
+                        <option>X</option>
+                        <option>A</option>
+                        <option>B</option>
+                        <option>C</option>
+                      </select>
+                </div>
+                <div class="form-group">
+                      <label for="doiTuong">Chọn đối tượng</label>
+                      <select class="form-control" id="doiTuong">
+                        <option>0</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                      </select>
+                </div>
+                <div class="form-group">
+                    <label for="diemMon1">Nhập điểm môn thứ 1</label>
+                    <input class="form-control" id="diemMon1">
+                </div>
+                <div class="form-group">
+                    <label for="diemMon2">Nhập điểm môn thứ 2</label>
+                    <input class="form-control" id="diemMon2">
+                </div>
+                <div class="form-group">
+                    <label for="diemMon3">Nhập điểm môn thứ 3</label>
+                    <input class="form-control" id="diemMon3">
+                </div>
+            </div>
+
+            <div class="button">
+                <button type="button" class="btn btn-primary ketQua" id="ketQua">Kết quả</button>
+                <div class="hienThi" id="hienThiKetQua"></div>
+            </div>
+        </form>
+
+    </div>
+
+    <!-- Bài 2: TÍNH TIỀN ĐIỆN -->
+    <div class="container" id="bai2Content">
+        <h4>Bài 2: TÍNH TIỀN ĐIỆN</h4>
+        <form>
+            <div class="thongTinBai2">
+                <div class="form-group">
+                    <label for="hoTen">Nhập Họ Tên</label>
+                    <input class="form-control" id="hoTen">
+                </div>
+                <div class="form-group">
+                    <label for="soKw">Nhập số Kw</label>
+                    <input class="form-control" id="soKw">
+                </div>
+                
+            </div>
+
+            <div class="button">
+                <button type="button" class="btn btn-primary ketQua" id="tinhTienDien">Tính tiền điện</button>
+                <div class="hienThi" id="hienThiTienDien"></div>
+            </div>
+        </form>
+
+    </div>
+
+    <!-- Bài 3: TÍNH THUẾ THU NHẬP CÁ NHÂN -->
+    <div class="container" id="bai2Content">
+        <h4>Bài 3: TÍNH THUẾ THU NHẬP CÁ NHÂN</h4>
+        <form>
+            <div class="thongTinBai2">
+                <div class="form-group">
+                    <label for="hoTen">Nhập Họ Tên</label>
+                    <input class="form-control" id="hoTen">
+                </div>
+                <div class="form-group">
+                    <label for="tongThuNhapNam">Nhập tổng thu nhập năm</label>
+                    <input class="form-control" id="tongThuNhapNam">
+                </div>
+                <div class="form-group">
+                    <label for="soNguoiPhuThuoc">Nhập số người phụ thuộc</label>
+                    <input class="form-control" id="soNguoiPhuThuoc">
+                </div>
+                
+            </div>
+
+            <div class="button">
+                <button type="button" class="btn btn-primary ketQua" id="tinhTienDien">Tính tiền điện</button>
+                <div class="hienThi" id="hienThiTienDien"></div>
+            </div>
+        </form>
+
+    </div>
+    
+
+
+
+
+
+
+    <!-- SCRIPT -->
+    <script src="./js/main.js"></script>
+</body>
+</html>
