@@ -15,8 +15,12 @@ function getLocalStorage() {
     dsnv.arr = arrJSON;
     hienThiDanhSachNhanVien(dsnv.arr);
 }
-
-function layThongTinNhanVien() {
+/**
+ * 
+ * @param {*} isAdd: false => tinh nang cap nhat, true => la tinh nang them
+ * @returns 
+ */
+function layThongTinNhanVien(isAdd) {
     const _taiKhoan = document.getElementById("tknv").value;
     const _hoTen = document.getElementById("name").value;
     const _email = document.getElementById("email").value;
@@ -29,7 +33,11 @@ function layThongTinNhanVien() {
     // validation
     // tạo biến flag(boolean), true: hợp lệ, false: ko hợp lệ.
     let isValidation = true;
-    isValidation &= validation.kiemTraRong(_taiKhoan, "tbTKNV", "(*) Thiếu tài khoản!");
+
+    if (isAdd) {
+        isValidation &= validation.kiemTraRong(_taiKhoan, "tbTKNV", "(*) Thiếu tài khoản!") && validation.kiemTraTaiKhoanTonTai(_taiKhoan, "tbTKNV", "(*) Tài khoản đã tồn tại!", dsnv.arr);
+    }
+
     isValidation &= validation.kiemTraRong(_hoTen, "tbTen", "(*) Thiếu họ và tên!");
     isValidation &= validation.kiemTraRong(_email, "tbEmail", "(*) Thiếu email!");
     isValidation &= validation.kiemTraRong(_matKhau, "tbMatKhau", "(*) Thiếu mật khẩu!");
@@ -62,7 +70,7 @@ function hienThiDanhSachNhanVien(data) {
                 <td>${nv.ngayLam}</td>
                 <td>${nv.chucVu}</td>
                 <td>${nv.tongLuong}</td>
-                <td>${nv.xepLoai}</td>
+                <td>${nv.loaiNV}</td>
                 <td>
                     <button class="btn btn-info" onclick="editNhanVien('${nv.taiKhoan}')">Edit</button>
                     <button class="btn btn-danger" onclick="deleteNhanVien('${nv.taiKhoan}')">Delete</button>
@@ -87,7 +95,7 @@ function buttonThemNhanVien() {
 }
 
 function addNhanVien() {
-    const nv = layThongTinNhanVien();
+    const nv = layThongTinNhanVien(true);
     if (!nv) return;
 
     dsnv.themNV(nv);
@@ -102,6 +110,9 @@ function deleteNhanVien(username) {
 }
 function editNhanVien(username) {
     console.log(username);
+
+    validation.xoaTatCaThongBao();
+
     const nv = dsnv.layThongTinNV(username);
     if (nv) {
         // Hiển thị thông tin nhân viên trên form
@@ -123,9 +134,19 @@ function editNhanVien(username) {
 }
 function updateNhanVien() {
     console.log("update");
-    const nv = layThongTinNhanVien();
+    const nv = layThongTinNhanVien(false);
     dsnv.capNhatNV(nv);
 
     hienThiDanhSachNhanVien(dsnv.arr);
     setLocalStorage();
 }
+
+document.getElementById("searchName").addEventListener("keyup", function () {
+    console.log("timkiem");
+    //lay tu khoa tim kiem
+    const keyword = document.getElementById("searchName").value;
+    console.log(keyword);
+
+    const mangTimKiem = dsnv.timKiemNV(keyword);
+    hienThiDanhSachNhanVien(mangTimKiem);
+});

@@ -1,4 +1,4 @@
-function NhanVien(_taiKhoan, _hoTen, _email, _matKhau, _ngayLam, _luongCoBan, _chucVu, _gioLamTrongThang, _tongLuong, _loaiNV) {
+function NhanVien(_taiKhoan, _hoTen, _email, _matKhau, _ngayLam, _luongCoBan, _chucVu, _gioLamTrongThang) {
     this.taiKhoan = _taiKhoan;
     this.hoTen = _hoTen;
     this.email = _email;
@@ -8,7 +8,7 @@ function NhanVien(_taiKhoan, _hoTen, _email, _matKhau, _ngayLam, _luongCoBan, _c
     this.chucVu = _chucVu;
     this.gioLamTrongThang = _gioLamTrongThang;
     this.tongLuong = 0;
-    this.loaNV = _loaiNV;
+    this.loaiNV = "";
 
     this.tinhTongLuong = function () {
         let heSo = 1;
@@ -33,13 +33,13 @@ function NhanVien(_taiKhoan, _hoTen, _email, _matKhau, _ngayLam, _luongCoBan, _c
 
     this.xepLoaiNhanVien = function () {
         if (this.gioLamTrongThang >= 192) {
-            this.xepLoai = "Xuất sắc";
+            this.loaiNV = "Xuất sắc";
         } else if (this.gioLamTrongThang >= 176) {
-            this.xepLoai = "Giỏi";
+            this.loaiNV = "Giỏi";
         } else if (this.gioLamTrongThang >= 160) {
-            this.xepLoai = "Khá";
+            this.loaiNV = "Khá";
         } else {
-            this.xepLoai = "Trung bình";
+            this.loaiNV = "Trung bình";
         }
     };
 
