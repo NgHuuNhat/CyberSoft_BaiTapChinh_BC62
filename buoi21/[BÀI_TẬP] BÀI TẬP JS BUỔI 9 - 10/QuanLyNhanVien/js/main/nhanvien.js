@@ -1,4 +1,5 @@
-function NhanVien(_taiKhoan, _hoTen, _email, _matKhau, _ngayLam, _luongCoBan, _chucVu, _gioLamTrongThang) {
+function NhanVien(_avatar, _taiKhoan, _hoTen, _email, _matKhau, _ngayLam, _luongCoBan, _chucVu, _gioLamTrongThang) {
+    this.avatar = _avatar;
     this.taiKhoan = _taiKhoan;
     this.hoTen = _hoTen;
     this.email = _email;

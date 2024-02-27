@@ -115,8 +115,8 @@
 								<h3 class="text-left text-primary font-weight-bold">Danh sách nhân viên</h3>
 							</div>
 							<div class="col-md-6 text-right">
-								<button class="btn btn-primary" id="btnThem" data-toggle="modal"
-									data-target="#myModal" onclick="buttonThemNhanVien()">Thêm nhân viên</button>
+								<button class="btn btn-primary" id="btnThem" data-toggle="modal" data-target="#myModal"
+									onclick="buttonThemNhanVien()">Thêm nhân viên</button>
 							</div>
 						</div>
 					</div>
@@ -137,6 +137,7 @@
 						<table class="table table-bordered table-hover myTable">
 							<thead class="text-primary">
 								<tr>
+									<th>Avatar</th>
 									<th class="nowrap">
 										<span class="mr-1">Tài khoản</span>
 										<i class="fa fa-arrow-up" id="SapXepTang"></i>
@@ -191,6 +192,30 @@
 				<div class="modal-body">
 
 					<form id="form" role="form">
+
+						<div class="form-group avatar-wrapper">
+							<div class="input-group" style="align-content: center;
+							justify-content: center;">
+								<div class="input-group-prepend">
+									<!-- <span class="input-group-text"><i class="fa fa-user"></i></span> -->
+									<img id="avatarPreview" src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp"
+										class="rounded-circle" style="width: 150px;" alt="Avatar" />
+								</div>
+
+							</div>
+							<label for="avatarInput" class="custom-file-upload" style="display: flex;
+							justify-content: center;
+							align-items: center;">
+								<input type="file" id="avatarInput" accept="image/*" style="display: none;">
+								<span id="selectedFileName" style="    cursor: pointer;
+								border: 1px solid #eaedf0;
+								background-color: #eaedf0;
+								border-radius: 10px;
+								padding: 2px 10px;">Chọn ảnh</span>
+							</label>
+
+							<span class="sp-thongbao" id="tbAvatar"></span>
+						</div>
 
 						<div class="form-group">
 							<div class="input-group">
@@ -294,7 +319,8 @@
 				<div class="modal-footer" id="modal-footer">
 					<button id="btnThemNV" type="button" onclick="addNhanVien()" class="btn btn-success">Thêm người
 						dùng</button>
-					<button id="btnCapNhat" type="button" class="btn btn-success" onclick="updateNhanVien()">Cập nhật</button>
+					<button id="btnCapNhat" type="button" class="btn btn-success" onclick="updateNhanVien()">Cập
+						nhật</button>
 					<button id="btnDong" type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
 				</div>
 
@@ -337,4 +363,5 @@
 	<script src="./js/main/main.js"></script>
 
 </body>
+
 </html>

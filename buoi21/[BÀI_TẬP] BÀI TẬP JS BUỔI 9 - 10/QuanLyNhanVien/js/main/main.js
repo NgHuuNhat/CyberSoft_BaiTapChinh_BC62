@@ -21,6 +21,7 @@ function getLocalStorage() {
  * @returns 
  */
 function layThongTinNhanVien(isAdd) {
+    const _avatar = document.getElementById("avatarPreview").src;
     const _taiKhoan = document.getElementById("tknv").value;
     const _hoTen = document.getElementById("name").value;
     const _email = document.getElementById("email").value;
@@ -47,7 +48,7 @@ function layThongTinNhanVien(isAdd) {
     isValidation &= validation.kiemTraRong(_gioLamTrongThang, "tbGiolam", "(*) Thiếu giờ làm trong tháng!");
     if (!isValidation) return null;
 
-    const nv = new NhanVien(_taiKhoan, _hoTen, _email, _matKhau, _ngayLam, _luongCoBan, _chucVu, _gioLamTrongThang);
+    const nv = new NhanVien(_avatar, _taiKhoan, _hoTen, _email, _matKhau, _ngayLam, _luongCoBan, _chucVu, _gioLamTrongThang);
     nv.tinhTongLuong();
     nv.xepLoaiNhanVien();
 
@@ -58,12 +59,37 @@ function layThongTinNhanVien(isAdd) {
 
     return nv;
 }
+// Thêm sự kiện nghe cho sự kiện chọn file
+document.getElementById("avatarInput").addEventListener('change', function () {
+    const file = this.files[0];
+    if (file) {
+        // Đọc avatar thành dataURL
+        const reader = new FileReader();
+        // Gắn dataURL vào src của avatar tương ứng
+        reader.onload = function (e) {
+            document.getElementById("avatarPreview").src = e.target.result;
+        };
+        // Hiển thị bản xem trước avatar
+        reader.readAsDataURL(file);
+    }
+});
 function hienThiDanhSachNhanVien(data) {
     let content = "";
     for (let i = 0; i < data.length; i++) {
         const nv = data[i];
         content += `
             <tr>
+                <td>
+                    <div class="input-group avatar-wrapper" style="align-content: center;
+                    justify-content: center;">
+                        <div class="input-group-prepend">
+                            <!-- <span class="input-group-text"><i class="fa fa-user"></i></span> -->
+                            <img id="avatarPreview_${i}" src="${nv.avatar}"
+                                class="rounded-circle" style="width: 150px;" alt="Avatar" />
+                        </div>
+
+                    </div>
+                </td>
                 <td>${nv.taiKhoan}</td>
                 <td>${nv.hoTen}</td>
                 <td>${nv.email}</td>
@@ -116,6 +142,7 @@ function editNhanVien(username) {
     const nv = dsnv.layThongTinNV(username);
     if (nv) {
         // Hiển thị thông tin nhân viên trên form
+        document.getElementById("avatarPreview").src = nv.avatar;
         document.getElementById("tknv").value = nv.taiKhoan;
         document.getElementById("tknv").disabled = true;
         document.getElementById("name").value = nv.hoTen;
