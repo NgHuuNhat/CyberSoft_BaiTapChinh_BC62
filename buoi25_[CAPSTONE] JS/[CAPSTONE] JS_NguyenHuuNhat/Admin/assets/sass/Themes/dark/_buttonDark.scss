@@ -1,0 +1,16 @@
+.darkMode{
+    .btnPhone-white{
+        box-shadow:none;
+    }
+    
+    .btnPhone-shadow{
+        box-shadow: none;
+        background-color: transparent;
+        border: $bd-1 solid $color-blue-2;
+        &:hover{
+            box-shadow: none;
+            background-color: $color-blue-2;
+            color: $color-white-3;
+        }
+    }
+}

@@ -1,0 +1,70 @@
+.myCarousel {
+    padding: $pd-2 0;
+    background-color: white;
+
+    #phoneCarousel {
+        img {
+            width: 100%;
+        }
+
+        .carousel-caption {
+            color: $color-dark-2;
+            justify-content: center;
+            top: 50% !important;
+            transform: translateY(-50%);
+
+            h5 {
+                @include styleText($fs-4, $fw-3, $color-blue-2);
+            }
+
+            p {
+                @include styleText($fs-3, $fw-2, $color-dark-4)
+            }
+        }
+
+    }
+}
+
+@include responsive("extra-large-down") {
+    .myCarousel {
+        #phoneCarousel {
+            .carousel-caption {
+                h5 {
+                    font-size: $fs-8;
+                }
+
+                p {
+                    font-size: $fs-2;
+                }
+            }
+        }
+    }
+
+}
+
+@include responsive("large-down") {
+    .myCarousel{
+        #phoneCarousel{
+            img{
+                width: 100%;
+            }
+            .carousel-caption {
+                top: 30% !important;
+                h5 {
+                    font-size: $fs-9;
+                }
+
+                p {
+                    font-size: $fs-1;
+                }
+                .btnInfo{
+                    margin-bottom: $pd-6;
+                    transform: scale(0.8);
+                }
+                .btnBuy{
+                    transform: scale(0.8);
+                }
+            }
+        }
+    }
+}

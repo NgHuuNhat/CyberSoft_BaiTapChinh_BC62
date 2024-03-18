@@ -1,0 +1,26 @@
+#cartModal{
+    #cartModalLabel{
+        @include styleText($fs-9,$fw-3,$color-blue-1);
+    }
+    p{
+        @include styleText($fs-5,$fw-2,$color-blue-1);
+        span{
+            color: $color-blue-2;
+        }
+    }
+}
+
+#cartNoti{
+    display: inline-block;
+    position: absolute;
+    top: 5px;
+    right: 0px;
+    font-size: $fs-1;
+    font-weight: $fw-2;
+    background-color: red;
+    width: 18px;
+    height: 18px;
+    line-height: 18px;
+    text-align: center;
+    border-radius: 50%;
+}

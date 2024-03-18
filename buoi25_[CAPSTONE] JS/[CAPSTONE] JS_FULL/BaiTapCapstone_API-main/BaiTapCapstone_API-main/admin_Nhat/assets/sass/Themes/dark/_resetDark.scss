@@ -1,0 +1,13 @@
+html,
+body {
+    &.darkMode{
+        background-color: $color-dark-2;
+    }
+   
+}
+.darkMode {  
+
+    .section-title {
+        color: $color-blue-4;
+    }
+}

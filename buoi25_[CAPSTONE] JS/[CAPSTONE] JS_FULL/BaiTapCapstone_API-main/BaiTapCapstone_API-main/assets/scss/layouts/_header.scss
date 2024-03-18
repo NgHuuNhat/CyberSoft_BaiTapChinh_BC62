@@ -1,0 +1,72 @@
+header {
+    background-color: $color-blue-2;
+    box-shadow: 0 2px 4px $color-blue-1;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    .navbar-brand {
+        @include styleText($fs-3, $fw-3, $color-white-3);
+    }
+    .navbar-toggler-icon{
+        font-size: $fs-5;
+        line-height: 1.5em;
+        color: $color-blue-1;
+    }
+    #phoneNavbar {
+        .nav-link {
+            @include styleText($fs-2, $fw-2, $color-white-3);
+            padding: 25px;
+            transition: 0.2s;
+            &::after {
+                content: "";
+                width: 0;
+                height: 2px;
+                display: block;
+                background-color: $color-yellow-1;
+                transition: 0.2s;
+            }
+            &:hover {
+                @include styleText($fs-2, $fw-2, $color-yellow-1);
+                &::after {
+                    width: 100%;
+                }
+            }
+        }
+        .active {
+            .nav-link {
+                @include styleText($fs-2, $fw-2, $color-yellow-1);  
+                &::after {
+                    width: 100%;
+                }               
+            }
+        }
+        .btnCart{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+}
+
+//responsive
+@include responsive("large-down"){
+    header{
+        #phoneNavbar{
+            .nav-link{
+                text-align: center;
+                &:hover{
+                    &::after{
+                        width: 0;
+                    }
+                }
+            }
+            .active{
+                .nav-link{
+                    &::after{
+                        width: 0;
+                    }
+                }
+            }
+        } 
+    } 
+}

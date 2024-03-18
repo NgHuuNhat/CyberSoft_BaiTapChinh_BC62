@@ -1,0 +1,12 @@
+.darkMode {
+    .phoneCarousel {
+        background-image: url(../img/product-header-bg-dark.jpg);
+        p {
+            color: $color-white-3;
+        }
+        h1,
+        h3 {
+            color: $color-blue-4;
+        }
+    }
+}

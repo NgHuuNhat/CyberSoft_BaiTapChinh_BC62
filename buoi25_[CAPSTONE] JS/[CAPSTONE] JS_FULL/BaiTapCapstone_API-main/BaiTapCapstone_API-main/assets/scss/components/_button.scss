@@ -1,0 +1,76 @@
+#btnCart {
+    font-size: $fs-3;
+    padding: 10px;
+    color: $color-white-3;
+    background-color: $color-blue-2;
+    border: transparent;
+    transition: 0.2s;
+    position: relative;
+
+    &:hover {
+        color: $color-yellow-1;
+    }
+}
+
+.btnInfo {
+    @include styleButton($color-blue-2, $pd-3 + 0.5, $pd-4, $bd-1 solid $color-blue-2, $bd-2, $ls-2);
+    @include styleText($fs-1, $fw-2, $color-white-1);
+    box-shadow: 0 3px 6px $color-blue-3;
+    transition: .5s;
+
+    &:hover {
+        @include styleButtonHover($color-white-1, $color-blue-2, $color-blue-2);
+    }
+}
+
+.btnBuy {
+    @include styleButton(transparent, $pd-3 + 0.5, $pd-4, $bd-1 solid $color-blue-2, $bd-2, $ls-2);
+    @include styleText($fs-1, $fw-2, $color-blue-2);
+    box-shadow: 0 3px 6px $color-blue-3;
+    transition: .5s;
+
+    &:hover {
+        @include styleButtonHover($color-blue-2, $color-blue-2, $color-white-3);
+    }
+}
+
+.btnAddToCart {
+    @include styleButton($color-blue-4, 0, 0, 2px solid $color-blue-4, $bd-2, $ls-1);
+    color: $color-white-3;
+    font-size: $fs-3;
+    transition: 0.2s;
+
+    i {
+        display: inline-block;
+        padding: $pd-3;
+    }
+
+    &:hover {
+        @include styleButtonHover($color-white-3, $color-blue-4, $color-blue-4);
+        transform: translateY(-5px);
+    }
+
+}
+
+.btnCartItem{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    font-size: 10px;
+    transition: 0.2s;
+    margin: 0 10px;
+    @include styleButton($color-white-4,0,0,none,50%,0);
+
+    &:hover{
+        @include styleButtonHover($color-blue-2,$color-white-1,$color-white-1);
+    }
+}
+
+#btnDeleteItem{
+    border-radius: 50%;
+    &:hover{
+        @include styleButtonHover(white,red,red);
+    }
+}

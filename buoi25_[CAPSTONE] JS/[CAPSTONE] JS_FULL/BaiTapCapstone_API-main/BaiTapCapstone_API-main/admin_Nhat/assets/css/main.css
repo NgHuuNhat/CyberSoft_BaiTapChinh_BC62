@@ -1,0 +1,368 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #656774;
+  background-color: #f5f9fe;
+}
+
+.section {
+  padding: 100px 0;
+}
+
+.section-title {
+  margin-bottom: 70px;
+  text-align: center;
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: #1d365e;
+  letter-spacing: 0.015rem;
+}
+
+.btnPhone-white {
+  background: transparent;
+  padding: 13.5px 44px;
+  border: 2px solid #2a73dd;
+  border-radius: 8px;
+  letter-spacing: 0.03rem;
+  font-size: 14px;
+  font-weight: 600;
+  color: #2a73dd;
+  box-shadow: 0 3px 6px #c9d8f4;
+  transition: 0.5s;
+}
+.btnPhone-white:hover {
+  background: #2a73dd;
+  border-color: #2a73dd;
+  color: #fff;
+}
+
+.btnPhone-blue {
+  background: linear-gradient(120deg, #60a4f4, #2a73dd);
+  padding: 15.5px 46px;
+  border: none;
+  border-radius: 8px;
+  letter-spacing: 0.03rem;
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  transition: 0.5s;
+}
+.btnPhone-blue:hover {
+  opacity: 0.75;
+}
+
+.btnPhone-shadow {
+  background: #f5f9fe;
+  padding: 8px 20px;
+  border: none;
+  border-radius: 4px;
+  letter-spacing: 0.03rem;
+  font-size: 10px;
+  font-weight: 600;
+  color: #2a73dd;
+  box-shadow: 2px 2px 4px #e2ebfc, -2px -2px 4px #fff;
+  transition: 0.5s;
+}
+.btnPhone-shadow:hover {
+  box-shadow: inset 1px 1px 3px #e2ebfc, inset -2px -2px 5px #fff;
+}
+
+.cardPhone {
+  box-shadow: 6px 6px 12px #e2ebfc, -6px -6px 12px #fff;
+  background-color: #f5f9fe;
+  border: none;
+  padding: 30px;
+  margin-bottom: 30px;
+}
+.cardPhone img {
+  box-shadow: 6px 6px 12px #e2ebfc, -6px -6px 12px #fff;
+  border-radius: 8px;
+}
+.cardPhone .cardPhone__title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1d365e;
+}
+.cardPhone .cardPhone__text {
+  font-size: 14px;
+  font-weight: 400;
+  color: #1d365e;
+}
+.cardPhone .cardPhone__rating {
+  color: #f9d412;
+}
+
+.sidebarMini {
+  position: fixed;
+  top: 25%;
+  right: 0;
+  z-index: 500;
+  width: 400px;
+  background-color: #2196f3;
+  transform: translateX(100%);
+  transition: 0.5s;
+  border-left: 1px solid #2196f3;
+  color: #fff;
+}
+.sidebarMini .sidebarMini__button {
+  background: #2196f3;
+  padding: 5px 20px;
+  border: 1px solid #2196f3;
+  border-radius: 8px 0 0 8px;
+  letter-spacing: 0.015rem;
+  position: fixed;
+  transform: translateX(-100%);
+  transition: 0.5s;
+  color: #fff;
+}
+.sidebarMini .sidebarMini__button:focus {
+  outline: none;
+}
+.sidebarMini .sidebarMini__content {
+  width: 170px;
+  padding: 20px;
+  text-align: center;
+}
+.sidebarMini .sidebarMini__content h2 {
+  font-size: 14px;
+}
+.sidebarMini .sidebarMini__content .switch {
+  height: 25px;
+  width: 50px;
+  margin: 0 10px;
+  position: relative;
+}
+.sidebarMini .sidebarMini__content .switch input {
+  display: none;
+}
+.sidebarMini .sidebarMini__content .switch input:checked + .slider::before {
+  transform: translateX(22px);
+}
+.sidebarMini .sidebarMini__content .switch .slider {
+  background-color: #2a73dd;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  border-radius: 34px;
+  cursor: pointer;
+}
+.sidebarMini .sidebarMini__content .switch .slider::before {
+  content: "";
+  width: 18px;
+  height: 18px;
+  background-color: #fff;
+  border-radius: 50%;
+  display: inline-block;
+  position: absolute;
+  bottom: 4px;
+  left: 4px;
+  transition: 0.5s;
+}
+.sidebarMini.is-opened {
+  transform: translateX(60%);
+}
+
+header {
+  background-color: #f5f9fe;
+  box-shadow: 0 2px 4px #e2ebfc;
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+}
+header .navbar-brand {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #2a73dd;
+}
+header .navbar-toggler-icon {
+  font-size: 1.6rem;
+  line-height: 1.5em;
+  color: #1d365e;
+}
+header #phoneNavbar .nav-link {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1d365e;
+  padding: 25px;
+  transition: 0.2s;
+}
+header #phoneNavbar .nav-link::after {
+  content: "";
+  width: 100%;
+  height: 2px;
+  display: block;
+  background-color: #2a73dd;
+  transform: scaleX(0);
+  transition: 0.2s;
+}
+header #phoneNavbar .nav-link:hover {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2a73dd;
+}
+header #phoneNavbar .nav-link:hover::after {
+  transform: scaleX(1);
+}
+header #phoneNavbar .active .nav-link {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2a73dd;
+}
+header #phoneNavbar .active .nav-link::after {
+  transform: scaleX(1);
+}
+
+@media screen and (max-width: 991.98px) {
+  header #phoneNavbar .nav-link {
+    text-align: center;
+  }
+}
+.phoneCarousel {
+  background-image: url(../img/product-header-bg.jpg);
+  background-size: cover;
+  background-position: center bottom;
+  padding: 225px 0;
+}
+.phoneCarousel h1 {
+  font-size: 70px;
+  font-weight: 700;
+  color: #2a73dd;
+}
+.phoneCarousel h3 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #1d365e;
+  letter-spacing: 0.015rem;
+  margin-bottom: 30px;
+}
+.phoneCarousel p {
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: #656774;
+  margin-bottom: 25px;
+}
+
+@media screen and (max-width: 991.98px) {
+  .phoneCarousel {
+    padding: 150px 0;
+  }
+}
+@media screen and (max-width: 767.98px) {
+  .phoneCarousel h1 {
+    font-size: 44px;
+  }
+}
+@media screen and (max-width: 575.98px) {
+  .phoneCarousel {
+    padding: 100px 0;
+  }
+}
+@media screen and (max-width: 575.98px) {
+  .products {
+    width: 90%;
+  }
+}
+.footerPhone {
+  background-color: #2a73dd;
+  padding-bottom: 60px;
+  color: #fff;
+}
+.footerPhone img {
+  margin-bottom: 60px;
+}
+.footerPhone .nav-link {
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+}
+.footerPhone .nav-link:hover {
+  opacity: 0.75;
+}
+.footerPhone .footer__light {
+  display: block;
+}
+.footerPhone .footer__dark {
+  display: none;
+}
+
+html.darkMode,
+body.darkMode {
+  background-color: #121212;
+}
+
+.darkMode .section-title {
+  color: #2196f3;
+}
+
+.darkMode .btnPhone-white {
+  box-shadow: none;
+}
+.darkMode .btnPhone-shadow {
+  box-shadow: none;
+  background-color: transparent;
+  border: 2px solid #2a73dd;
+}
+.darkMode .btnPhone-shadow:hover {
+  box-shadow: none;
+  background-color: #2a73dd;
+  color: #fff;
+}
+
+.darkMode .cardPhone {
+  box-shadow: none;
+  background-color: #212121;
+}
+.darkMode .cardPhone img {
+  box-shadow: none;
+}
+.darkMode .cardPhone .cardPhone__title,
+.darkMode .cardPhone .cardPhone__text {
+  color: #2196f3;
+}
+
+.darkMode header {
+  background-color: #353536;
+  box-shadow: none;
+}
+.darkMode header .navbar-brand {
+  color: #2196f3;
+}
+.darkMode header .navbar-toggler-icon {
+  color: #2196f3;
+}
+.darkMode header #phoneNavbar .nav-link {
+  color: #fff;
+}
+.darkMode header #phoneNavbar .nav-link:hover {
+  color: #2196f3;
+}
+.darkMode header #phoneNavbar .active .nav-link {
+  color: #2196f3;
+}
+
+.darkMode .phoneCarousel {
+  background-image: url(../img/product-header-bg-dark.jpg);
+}
+.darkMode .phoneCarousel p {
+  color: #fff;
+}
+.darkMode .phoneCarousel h1,
+.darkMode .phoneCarousel h3 {
+  color: #2196f3;
+}
+
+.darkMode .footerPhone .footer__light {
+  display: none;
+}
+.darkMode .footerPhone .footer__dark {
+  display: block;
+}/*# sourceMappingURL=main.css.map */

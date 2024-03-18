@@ -1,0 +1,21 @@
+// helpers
+@import "./helpers/variables";
+@import "./helpers/mixins";
+
+// base
+@import "./base/reset";
+
+// pages
+@import "./pages/index";
+
+//layouts
+@import "./layouts/header";
+@import "./layouts/carousel";
+@import "./layouts/product";
+@import "./layouts/footer";
+
+// components
+@import "./components/button";
+@import "./components/card";
+@import "./components/loader";
+@import "./components/cart";
