@@ -1,4 +1,6 @@
 const api = new Api();
+let arr = [];
+let arr2;
 
 function getListProduct() {
     const promise = api.fecthData();
@@ -7,8 +9,22 @@ function getListProduct() {
     promise
         .then(function (result) {
             document.getElementById("loader").style.display = "none";
-            // console.log(result.data);
-            renderUI(result.data);
+            const data = result.data;
+            console.log("data=", data);
+
+            //Hien thi product len web
+            renderUI(data);
+
+            //cách 1 dùng arr để lưu trữ data
+            data.forEach(function (product) {
+                arr.push(product);
+            });
+            console.log("arr trong ham get", arr);
+
+            //cách 2 dùng arr2 để lưu trữ data
+            arr2 = data;
+            console.log("arr2 trong ham get", arr2);
+
             // loadItem();
         })
         .catch(function (error) {
@@ -17,6 +33,10 @@ function getListProduct() {
         });
 }
 getListProduct();
+console.log("arr=", arr);   //dùng cách 1: data được lưu trữ trong mảng arr[].
+console.log("arr2=", arr2); //dùng cách 2: data không được lưu trữ trong biến arr2. 
+//vì vậy, nên dùng cách 1, tạo mảng arr[] để lưu trữ data.
+//có thể tái sử dụng arr[] trong function timKiem().
 
 function renderUI(data) {
     let content = "";
@@ -194,10 +214,15 @@ function updateProduct(id) {
 }
 
 //timkiem
-timKiem();
-//sap xep
-document.getElementById("sapXep").addEventListener("change", handleSortChange);
 
+//cach1
+// timKiem();
+
+//cach2
+document.getElementById("search").addEventListener("keyup", timKiem);
+
+//sap xep
+document.getElementById("sapXep").addEventListener("change", sapXepTangGiam);
 
 
 

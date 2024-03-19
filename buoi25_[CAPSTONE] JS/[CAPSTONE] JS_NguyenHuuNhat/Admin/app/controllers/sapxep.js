@@ -1,4 +1,4 @@
-function handleSortChange() {
+function sapXepTangGiam() {
     var selectedValue = document.getElementById("sapXep").value; // Lấy giá trị đã chọn từ dropdown
 
     const promise = api.fecthData(); // Lấy dữ liệu sản phẩm từ API
