@@ -1,0 +1,32 @@
+/* header */
+header{
+    padding: 20px 0;
+    background-color: #2a73dd;
+}
+
+.centerNav .navbar-brand{
+    color: white;
+    font-size: 30px;
+}
+
+#centerNavbar .nav-link{
+    color: white;
+}
+
+.listPerson h1{
+    text-align: center;
+    padding: 30px 0;
+}
+
+/* input style */
+/* #inputStudent,
+#inputTeacher{
+    display: flex;
+    justify-content: start;
+    gap: 30px;
+}
+
+#inputStudent .score{
+    width: 25%;
+} */
+
