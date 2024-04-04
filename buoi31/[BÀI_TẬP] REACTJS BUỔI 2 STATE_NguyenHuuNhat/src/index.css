@@ -1,0 +1,66 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-image: url(./../public/glassesImage/background.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.listGlasses {
+  background-color: white;
+  padding: 20px;
+  border: 2px solid black;
+  border-radius: 5px;
+  gap: 20px 0;
+  margin: 0 !important;
+}
+
+.showAll {
+  justify-content: center;
+  align-items: center;
+}
+
+.model {
+  border: 2px solid black;
+  border-radius: 5px;
+  position: relative;
+}
+
+.glass {
+  width: 50%;
+  position: absolute;
+  top: 23%;
+  left: 20%;
+}
+
+.glassInfo {
+  background-color: rgba(112, 13, 13, 0.8);
+  color: white;
+  width: 100%;
+  height: 200px;
+  border: 2px solid black;
+  border-radius: 5px;
+  margin-top: 20px;
+  padding: 20px;
+}
+
+button{
+  padding: 5px;
+  border: 1px solid black;
+  transition: 0.2s;
+}
+
+button:hover{
+  transform: scale(1.1);
+}
