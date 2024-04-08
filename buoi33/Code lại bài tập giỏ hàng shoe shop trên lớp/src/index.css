@@ -1,0 +1,68 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 40px;
+  text-align: center;
+  color: white;
+  background-color: rgb(80, 80, 204);
+  padding: 20px 0;
+}
+
+.listShoes{
+  padding: 30px 0;
+  padding-top: 150px;
+  gap: 20px 0;
+}
+
+.card{
+  height: 100%;
+  position: relative;
+}
+
+.btnShoes{
+  position: absolute;
+  bottom: 10px;
+  left: 20px;
+}
+
+.btnAddToCart{
+  display: inline-block;
+  margin-left: 20px;
+}
+
+.tableDetail th,
+.tableDetail td{
+  padding: 20px;
+  border: 1px solid #dddddd;
+  text-align: left;
+}
+.tableDetail th{
+  width: 120px;
+}
+
+.btnUpdateQty{
+  display: inline-block;
+  border: 1px solid transparent;
+  text-align: center;
+  margin: 5px;
+  font-weight: 600;
+}
+
+.title {
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+}
